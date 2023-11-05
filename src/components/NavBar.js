@@ -9,7 +9,10 @@ import {
   LinkedInIcon,
   PinterestIcon,
   DribbbleIcon,
+  SunIcon,
+  MoonIcon,
 } from './Icons';
+import useThemeSwitcher from './hooks/useThemeSwitcher';
 
 const CustomLink = ({ href, title, className = '' }) => {
   const router = useRouter();
@@ -18,6 +21,7 @@ const CustomLink = ({ href, title, className = '' }) => {
       {title}
       <span
         className={`h-[1px] inline-block  w-0 bg-dark
+          dark:bg-light
             absolute left-0 -bottom-0.5
             group-hover:w-full transition-[width] ease duration-300
             ${router.asPath === href ? 'w-full' : 'w-0'}`}
@@ -29,8 +33,10 @@ const CustomLink = ({ href, title, className = '' }) => {
 };
 
 const NavBar = () => {
+  const { mode, toggleMode } = useThemeSwitcher();
+
   return (
-    <header className="flex items-center justify-between w-full px-32 py-8 font-medium">
+    <header className="flex items-center justify-between w-full px-32 py-8 font-medium dark:text-light">
       <nav>
         <CustomLink href="/" title="Home" className="mr-4" />
         <CustomLink href="/about" title="About" className="mx-4" />
@@ -84,6 +90,18 @@ const NavBar = () => {
         >
           <DribbbleIcon />
         </motion.a>
+
+        <button
+          onClick={toggleMode}
+          className={`flex items-center justify-center p-1 ml-3 rounded-full
+          ${mode === 'light' ? 'bg-dark text-light' : 'bg-light text-dark'}`}
+        >
+          {mode === 'dark' ? (
+            <SunIcon className="fill-dark" />
+          ) : (
+            <MoonIcon className="fill-light" />
+          )}
+        </button>
       </nav>
 
       <div className="absolute left-[50%] top-2 translate-x-[-50%]">
