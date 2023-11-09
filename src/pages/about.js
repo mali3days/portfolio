@@ -24,7 +24,6 @@ const AnimatedNumbers = ({ value }) => {
 
   useEffect(() => {
     springValue.on('change', (latest) => {
-      // motionValue.set(value);
       if (ref.current && latest.toFixed(0) <= value) {
         ref.current.textContent = latest.toFixed(0);
       }
@@ -41,12 +40,12 @@ const about = () => {
         <title>mali3days | About Page</title>
         <meta name="description" content="https:TODO: any description"></meta>
       </Head>
-      <main className="flex flex-col items-center justify-center w-full">
+      <main className="flex flex-col items-center justify-center w-full dark:text-light">
         <Layout className="pt-16">
           <AnimatedText text="Passion Fuels Purpose!" className="mb-16" />
           <div className="grid w-full grid-cols-8 gap-16">
             <div className="flex flex-col items-start justify-start col-span-3">
-              <h2 className="mb-4 text-lg font-bold uppercase text-dark/75">
+              <h2 className="mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75">
                 Biography
               </h2>
               <p className="font-medium">
@@ -69,8 +68,8 @@ const about = () => {
               project.`}
               </p>
             </div>
-            <div className="relative col-span-3 p-8 border-2 border-solid h-max rounded-2xl border-dark bg-light">
-              <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark" />
+            <div className="relative col-span-3 p-8 border-2 border-solid h-max rounded-2xl border-dark bg-light dark:bg-dark dark:border-light">
+              <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light" />
               <Image
                 className="w-full h-auto rounded-2xl"
                 src={profilePic}
