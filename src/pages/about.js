@@ -74,6 +74,10 @@ const about = () => {
                 className="w-full h-auto rounded-2xl"
                 src={profilePic}
                 alt="TODO: mali3days"
+                priority
+                sizes="(max-width: 768px) 100vw,
+                       (max-width: 1200px) 50vw,
+                       33vw"
               />
             </div>
             <div className="flex flex-col items-end justify-between col-span-2">

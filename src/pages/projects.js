@@ -30,16 +30,24 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {
           transition={{
             duration: 0.2,
           }}
+          priority
+          sizes="(max-width: 768px) 100vw,
+                (max-width: 1200px) 50vw,
+                50vw"
         />
       </Link>
       <div className="flex flex-col items-start justify-between w-1/2 pl-6">
-        <span className="text-xl font-medium text-primary dark:text-primaryDark">{type}</span>
+        <span className="text-xl font-medium text-primary dark:text-primaryDark">
+          {type}
+        </span>
         <Link
           href={link}
           target="_blank"
           className="hover:underline underline-offset-2"
         >
-          <h2 className="w-full my-2 text-4xl font-bold text-left dark:text-light">{title}</h2>
+          <h2 className="w-full my-2 text-4xl font-bold text-left dark:text-light">
+            {title}
+          </h2>
         </Link>
         <p className="my-2 font-medium text-dark dark:text-light">{summary}</p>
         <div className="flex items-center mt-2">
@@ -81,7 +89,9 @@ const Project = ({ title, type, img, link, github }) => {
         />
       </Link>
       <div className="flex flex-col items-start justify-between w-full mt-4">
-        <span className="text-xl font-medium text-primary dark:text-primaryDark">{type}</span>
+        <span className="text-xl font-medium text-primary dark:text-primaryDark">
+          {type}
+        </span>
         <Link
           href={link}
           target="_blank"

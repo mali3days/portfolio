@@ -19,7 +19,15 @@ export default function Home() {
         <Layout className="pt-0">
           <div className="flex items-center justify-between w-full">
             <div className="w-1/2">
-              <Image src={profilePic} alt="Mykola" className="w-full h-auto" />
+              <Image
+                src={profilePic}
+                alt="Mykola"
+                className="w-full h-auto"
+                priority
+                sizes="(max-width: 768px) 100vw,
+                       (max-width: 1200px) 50vw,
+                       50vw"
+              />
             </div>
             <div className="flex flex-col items-center self-center w-1/2">
               <AnimatedText
@@ -56,12 +64,8 @@ export default function Home() {
           </div>
         </Layout>
         <HireMe />
-        <div className='absolute inline-block w-24 right-8 bottom-8'>
-          <Image
-            src={lightBulb}
-            alt="mali3days"
-            className="w-full h-auto"
-          />
+        <div className="absolute inline-block w-24 right-8 bottom-8">
+          <Image src={lightBulb} alt="mali3days" className="w-full h-auto" />
         </div>
       </main>
     </>

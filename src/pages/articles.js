@@ -59,6 +59,10 @@ const MovingImage = ({ title, img, link }) => {
         src={img}
         alt={title}
         className="absolute z-10 hidden h-auto rounded-lg w-96"
+        priority
+        sizes="(max-width: 768px) 100vw,
+               (max-width: 1200px) 50vw,
+               33vw"
       />
     </Link>
   );
@@ -108,6 +112,10 @@ const FeaturedArticle = ({ img, title, time, summary, link }) => {
           transition={{
             duration: 0.2,
           }}
+          priority
+          sizes="(max-width: 768px) 100vw,
+                (max-width: 1200px) 50vw
+                33vw"
         />
       </Link>
       <Link href={link} target="_blank">
@@ -116,7 +124,9 @@ const FeaturedArticle = ({ img, title, time, summary, link }) => {
         </h2>
       </Link>
       <p className="mb-2 text-sm">{summary}</p>
-      <span className="font-semibold text-primary dark:text-primaryDark">{time}</span>
+      <span className="font-semibold text-primary dark:text-primaryDark">
+        {time}
+      </span>
     </li>
   );
 };
