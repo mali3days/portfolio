@@ -11,6 +11,7 @@ import article4 from '../../public/images/articles/form validation in reactjs us
 import article5 from '../../public/images/articles/smooth scrolling in reactjs.png';
 import article6 from '../../public/images/articles/todo list app built using react redux and framer motion.png';
 import { motion, useMotionValue } from 'framer-motion';
+import TransitionEffect from '@/components/TransitionEffect';
 
 const FramerImage = motion(Image);
 
@@ -138,6 +139,7 @@ const articles = () => {
         <title>mali3days | articles Page</title>
         <meta name="description" content="https:TODO: any description"></meta>
       </Head>
+      <TransitionEffect />
       <main className="flex flex-col items-center justify-center w-full mb-16 overflow-hidden dark:text-light">
         <Layout className="pt-16">
           <AnimatedText text="Words Can Change The World!" className="mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl" />

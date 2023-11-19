@@ -7,6 +7,7 @@ import Link from 'next/link';
 import React from 'react';
 import project1 from '../../public/images/projects/crypto-screener-cover-image.jpg';
 import { motion } from 'framer-motion';
+import TransitionEffect from '@/components/TransitionEffect';
 
 const FramerImage = motion(Image);
 
@@ -127,6 +128,7 @@ const projects = () => {
         <title>mali3days | Projects Page</title>
         <meta name="description" content="https:TODO: any description"></meta>
       </Head>
+      <TransitionEffect />
       <main className="flex flex-col items-center justify-center w-full mb-16 dark:text-light">
         <Layout className="pt-16">
           <AnimatedText
